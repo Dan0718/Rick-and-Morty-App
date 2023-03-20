@@ -24,14 +24,15 @@ async function fetchCharacters() {
   const characters = data.results;
 
   maxPage = data.info.pages;
-  pagination.textContent = `${page} / ${maxPage}`;
+  pagination.textContent = `${page} / ${maxPage}`; 
 
   characters.forEach((character) => {
     const card = createCharacterCard({
-      name: character.name,
+    
+    name: character.name,
       status: character.status,
       type: character.type,
-      occurrences: character.episode.length,
+      occurences: character.episode.length,
       imgSrc: character.image,
     });
     cardContainer.append(card);
